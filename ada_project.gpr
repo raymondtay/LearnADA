@@ -1,0 +1,31 @@
+project Ada_Project is
+   -- 1. Where to find your sources
+   for Source_Dirs use ("src",
+                        "src/basics", -- chapter1
+                        "tests");
+
+   -- 2. Where to drop object files
+   for Object_Dir use "build/obj";
+
+   -- 3. Where to place final executables/libraries (optional, can rename via “–o” flag)
+   for Main use ("main.adb");
+
+   -- 4. Compiler switches (enable debug, optimize for release, etc.)
+   package Compiler is
+      for Default_Switches ("Ada") use
+        ("-g",         -- include debug info
+         "-gnatwa",    -- be ANSI-conforming
+         "-O2");       -- optimize level 2
+   end Compiler;
+
+   -- 5. If you use code coverage, you could have a variant:
+   -- project Ada_Project_With_Coverage is
+   --    for Source_Dirs use ("src", "tests");
+   --    for Object_Dir use "build/obj_cov";
+   --    package Compiler is
+   --       for Default_Switches ("Ada") use ("-g", "-fprofile-arcs", "-ftest-coverage");
+   --    end Compiler;
+   -- end Ada_Project_With_Coverage;
+
+end Ada_Project;
+
