@@ -1,6 +1,7 @@
-with Ada.Text_IO;
-use Ada.Text_IO;
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
+-- Original examples are from https://learn.adacore.com/courses/intro-to-ada/chapters/imperative_language.html
 -- Building this program on my macOS would give:
 -- gnatmake src/greet.adb
 -- gcc -c -Isrc/ -I- src/greet.adb
@@ -15,6 +16,117 @@ package body Basics is
    begin
       Put_Line("Hello, " & Name & "!");
    end Say_Hello;
+
+   procedure Check_Positive is
+     N : Integer;
+   begin
+     -- Put a String
+     Put ("Enter a integer value: ");
+     -- Read in an integer value
+     Get (N);
+
+     Put (N); -- Put an integer
+     if N > 0 then
+       Put_Line (" is a positive number.");
+     else 
+       Put_Line (" is not a positive number.");
+     end if;
+   end Check_Positive;
+
+   procedure Check_Direction is
+     N : Integer;
+   begin
+     Put ("Enter an integer value: ");
+     Get (N);
+     Put (N);
+     if N = 0 or N = 360 then
+       Put_Line (" is due north");
+     elsif N in 1 .. 89 then
+       Put_Line (" is the northeast quadrant.");
+     elsif N = 90 then
+       Put_Line (" is due east.");
+     elsif N in 91 .. 179 then
+       Put_Line (" is the southeast quadrant.");
+     elsif N = 180 then
+       Put_Line (" is due south.");
+     elsif N in 181 .. 269 then
+       Put_Line (" is the southwest quadrant.");
+     elsif N = 270 then
+       Put_Line (" is due west.");
+     elsif N in 271 .. 359 then
+       Put_Line (" is the norhtwest quadrant.");
+     else
+       Put_Line (" is not in the range 0 .. 360.");
+     end if;
+   end Check_Direction;
+
+   procedure Greet_5a is
+   begin
+     for I in 1.. 5 loop -- discrete range, from 1 to 5 inclusive. I is local to the loop
+       Put_Line ("Hello World!"
+       & Integer'Image(I));
+     end loop;
+   end Greet_5a;
+
+   procedure Greet_5a_reverse is
+   begin
+     for I in reverse 1.. 5 loop -- discrete range, from 1 to 5 inclusive. I is local to the loop
+       Put_Line ("Hello World!"
+       & Integer'Image(I));
+     end loop;
+   end Greet_5a_reverse;
+
+   procedure Greet_5a_noop is
+   begin
+     for I in reverse 5.. 1 loop -- NOOP when the upper limit of the loop is LT kkkkkkkkL
+       Put_Line ("Hello World!"
+       & Integer'Image(I));
+     end loop;
+   end Greet_5a_noop;
+
+
+   procedure Nested_Procedure is
+     procedure Nested is
+     begin
+       Put_Line ("Hello World Everyone");
+     end Nested;
+   begin
+     Nested;
+   end Nested_Procedure;
+
+   procedure Greet is
+   begin
+     loop
+       Put_Line ("please enter your name: ");
+
+       declare
+         Name : String := Get_Line; 
+
+       begin 
+         exit when Name = ""; -- return when empty string
+         Put_Line ("Hi " & Name & "!");
+       end;
+       -- Name is undefined here.
+     end loop;
+     Put_Line ("Bye!");
+   end Greet;
+
+   procedure Check_Positive_v2 is
+      N : Integer;
+   begin 
+     Put ("[Check_Positive v2] Enter an integer value: ");
+     Get (N);
+     Put (N);
+
+     declare
+       S : constant String :=
+         (if N > 0
+          then " is a positive number"
+          else " is not a positive number");
+     begin
+       Put_Line (S);
+     end;
+   end Check_Positive_v2;
 
 end Basics;
 
