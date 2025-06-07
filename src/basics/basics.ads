@@ -16,7 +16,7 @@ package Basics is
 
    procedure Nested_Procedure;
    procedure Greet;
-   procedure Check_Positive_v2;
+   procedure Check_Even_Odd;
 end Basics;
 
 

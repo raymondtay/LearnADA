@@ -78,7 +78,7 @@ package body Basics is
 
    procedure Greet_5a_noop is
    begin
-     for I in reverse 5.. 1 loop -- NOOP when the upper limit of the loop is LT kkkkkkkkL
+     for I in reverse 1 .. 5 loop -- NOOP when the upper limit of the loop is LT
        Put_Line ("Hello World!"
        & Integer'Image(I));
      end loop;
@@ -100,7 +100,7 @@ package body Basics is
        Put_Line ("please enter your name: ");
 
        declare
-         Name : String := Get_Line; 
+         Name : constant String := Get_Line; 
 
        begin 
          exit when Name = ""; -- return when empty string
@@ -111,22 +111,28 @@ package body Basics is
      Put_Line ("Bye!");
    end Greet;
 
-   procedure Check_Positive_v2 is
-      N : Integer;
-   begin 
-     Put ("[Check_Positive v2] Enter an integer value: ");
+   procedure Check_Even_Odd is
+    N : Integer;
+    -- Checks whether the number is range between 1 - 10
+    function Is_Odd(X : in Integer) return Boolean is
+    begin
+      return (X mod 2 /= 0);
+    end Is_Odd;
+
+   begin
+     Put ("[Check_Even_Odd] Enter an integer value: ");
      Get (N);
      Put (N);
 
      declare
        S : constant String :=
-         (if N > 0
-          then " is a positive number"
-          else " is not a positive number");
+         (if Is_Odd(N)
+          then " is a odd number"
+          else " is a even number");
      begin
        Put_Line (S);
      end;
-   end Check_Positive_v2;
+   end Check_Even_Odd;
 
 end Basics;
 

@@ -4,7 +4,7 @@ procedure Main is
 begin
   Say_Hello("World!!!!!!");
   Check_Positive;
-  Check_Positive_v2;
+  Check_Even_Odd;
   Check_Direction;
   Check_Direction;
   Greet_5a;
