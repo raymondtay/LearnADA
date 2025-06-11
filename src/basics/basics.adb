@@ -15,6 +15,7 @@ package body Basics is
    procedure Say_Hello(Name : in String) is
    begin
       Put_Line("Hello, " & Name & "!");
+      BasicsLogger.Info("Hello, {0}", Name);
    end Say_Hello;
 
    procedure Check_Positive is
@@ -131,6 +132,7 @@ package body Basics is
           else " is a even number");
      begin
        Put_Line (S);
+       BasicsLogger.Info("Outcome is {0}", S);
      end;
    end Check_Even_Odd;
 

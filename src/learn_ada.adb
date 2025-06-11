@@ -5,9 +5,14 @@ with Increment_By;
 with Show_Increment;
 with Quadruple;
 with In_Out_Params;
+with Show_Renaming;
+with A_Procedure_With_Very_Long_Name_That_Cannot_Be_Changed;
 
-procedure Main is
+procedure Learn_Ada is
   N : constant Integer := 4;
+  procedure Show (S : String) renames
+    A_Procedure_With_Very_Long_Name_That_Cannot_Be_Changed;
+
 begin
   Say_Hello("World!!!!!!");
   Check_Positive;
@@ -29,11 +34,11 @@ begin
   Show_Increment;
 
   Put_Line("32 * 4 is " & Integer'Image(Quadruple(32)));
-
+  
+  -- in, in out, out parameters demonstration
   In_Out_Params;
 
-  -- Show Renaming
+  -- Subprogram Renaming
   Show("Hi, I'm Raymond and I'm trying to learn Ada.");
-end Main;
-
+end Learn_Ada;
 

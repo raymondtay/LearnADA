@@ -22,9 +22,9 @@ package body ada_main is
    E073 : Short_Integer; pragma Import (Ada, E073, "system__file_io_E");
    E006 : Short_Integer; pragma Import (Ada, E006, "ada__text_io_E");
    E083 : Short_Integer; pragma Import (Ada, E083, "basics_E");
-   E107 : Short_Integer; pragma Import (Ada, E107, "increment_E");
-   E109 : Short_Integer; pragma Import (Ada, E109, "increment_by_E");
-   E111 : Short_Integer; pragma Import (Ada, E111, "quadruple_E");
+   E108 : Short_Integer; pragma Import (Ada, E108, "increment_E");
+   E110 : Short_Integer; pragma Import (Ada, E110, "increment_by_E");
+   E112 : Short_Integer; pragma Import (Ada, E112, "quadruple_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 1) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
 
@@ -181,9 +181,9 @@ package body ada_main is
       Ada.Text_Io'Elab_Body;
       E006 := E006 + 1;
       E083 := E083 + 1;
-      E107 := E107 + 1;
-      E109 := E109 + 1;
-      E111 := E111 + 1;
+      E108 := E108 + 1;
+      E110 := E110 + 1;
+      E112 := E112 + 1;
    end adainit;
 
    procedure Ada_Main_Program;
@@ -222,6 +222,7 @@ package body ada_main is
 
 --  BEGIN Object file/option list
    --   /Users/raymondtay/Projects/LearnADA/build/obj/basics.o
+   --   /Users/raymondtay/Projects/LearnADA/build/obj/in_out_params.o
    --   /Users/raymondtay/Projects/LearnADA/build/obj/increment.o
    --   /Users/raymondtay/Projects/LearnADA/build/obj/increment_by.o
    --   /Users/raymondtay/Projects/LearnADA/build/obj/quadruple.o

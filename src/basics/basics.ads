@@ -1,7 +1,11 @@
 --  greeting.ads
 --  Specification for the package Greeting
 
+with Util.Log.Loggers;
+
 package Basics is
+  
+   BasicsLogger : constant Util.Log.Loggers.Logger := Util.Log.Loggers.Create ("Basics");
    --  Say_Hello: prints a greeting message to standard output.
    --
    --  Parameters:

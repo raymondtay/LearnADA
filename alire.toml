@@ -1,0 +1,15 @@
+name = "learn_ada"
+description = "Learn Ada"
+version = "0.1.0-dev"
+
+authors = ["Raymond tay"]
+maintainers = ["Raymond tay <raymondtay1974@gmail.com>"]
+maintainers-logins = ["raymondtay"]
+licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = []
+
+executables = ["learn_ada"]
+
+[[depends-on]]
+utilada = "^2.8.0"
