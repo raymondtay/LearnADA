@@ -6,13 +6,19 @@ with Show_Increment;
 with Quadruple;
 with In_Out_Params;
 with Show_Renaming;
+with Util.Log.Loggers;
 with A_Procedure_With_Very_Long_Name_That_Cannot_Be_Changed;
+with Operations;
+with Operations.MathOps;
 
 procedure Learn_Ada is
+  use Operations; -- make all names in Operations package available.
+  use Operations.MathOps;
+
   N : constant Integer := 4;
   procedure Show (S : String) renames
     A_Procedure_With_Very_Long_Name_That_Cannot_Be_Changed;
-
+  MainLogger : constant Util.Log.Loggers.Logger := Util.Log.Loggers.Create("basicsm");
 begin
   Say_Hello("World!!!!!!");
   Check_Positive;
@@ -22,6 +28,8 @@ begin
   Greet_5a; Greet_5a_reverse; Greet_5a_noop;
   Nested_Procedure;
   Greet;
+
+  MainLogger.Info("Startingn......");
 
   declare
     A : Integer := Increment(N);
