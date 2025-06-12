@@ -10,6 +10,8 @@ with Util.Log.Loggers;
 with A_Procedure_With_Very_Long_Name_That_Cannot_Be_Changed;
 with Operations;
 with Operations.MathOps;
+with Book.Additional_Operations;
+use Book.Additional_Operations;
 
 procedure Learn_Ada is
   use Operations; -- make all names in Operations package available.
@@ -48,5 +50,10 @@ begin
 
   -- Subprogram Renaming
   Show("Hi, I'm Raymond and I'm trying to learn Ada.");
+
+  -- Package visibility
+  Put_Line(Get_Extended_Title);
+  Put_Line(Get_Extended_Author);
+
 end Learn_Ada;
 
