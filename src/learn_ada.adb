@@ -14,7 +14,7 @@ with Book.Additional_Operations;
 use Book.Additional_Operations;
 with Overflow_Checks;
 use Overflow_Checks;
-with Converting_Types; use Conv; use Conv2
+with Converting_Types; use Converting_Types;
 
 procedure Learn_Ada is
   use Operations; -- make all names in Operations package available.
@@ -58,7 +58,8 @@ begin
   Put_Line(Get_Extended_Title);
   Put_Line(Get_Extended_Author);
 
-  Overflow_Checks_Demo;
+  Overflow_Checks_Demo_OK;
+  -- Overflow_Checks_Demo_NOK;
 
   -- Type conversion
   Conv2;

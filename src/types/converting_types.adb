@@ -37,5 +37,5 @@ package body Converting_Types is
      Put_Line (Miles'Image (Dist_Imperial));
   end Conv2;
 
-package Converting_Types;
+end Converting_Types;
 
