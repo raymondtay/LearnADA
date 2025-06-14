@@ -5,6 +5,7 @@ project Learn_Ada is
      "src/",
      "src/basics", -- chapter1
      "src/package_basics", -- chapter2
+     "src/types", -- chapter3
      "config/");
    for Object_Dir use "obj/" & Learn_Ada_Config.Build_Profile;
    for Create_Missing_Dirs use "True";

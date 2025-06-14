@@ -12,6 +12,9 @@ with Operations;
 with Operations.MathOps;
 with Book.Additional_Operations;
 use Book.Additional_Operations;
+with Overflow_Checks;
+use Overflow_Checks;
+with Converting_Types; use Conv; use Conv2
 
 procedure Learn_Ada is
   use Operations; -- make all names in Operations package available.
@@ -44,7 +47,7 @@ begin
   Show_Increment;
 
   Put_Line("32 * 4 is " & Integer'Image(Quadruple(32)));
-  
+
   -- in, in out, out parameters demonstration
   In_Out_Params;
 
@@ -54,6 +57,11 @@ begin
   -- Package visibility
   Put_Line(Get_Extended_Title);
   Put_Line(Get_Extended_Author);
+
+  Overflow_Checks_Demo;
+
+  -- Type conversion
+  Conv2;
 
 end Learn_Ada;
 

@@ -3,6 +3,7 @@
 
 # Ada Library Information
 *.ali
+/build/
 /obj/
 /bin/
 /alire/
