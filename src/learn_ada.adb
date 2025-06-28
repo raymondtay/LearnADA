@@ -15,6 +15,8 @@ use Book.Additional_Operations;
 with Overflow_Checks;
 use Overflow_Checks;
 with Converting_Types; use Converting_Types;
+with Subtypes_Are_Not_New_Types; use Subtypes_Are_Not_New_Types;
+
 
 procedure Learn_Ada is
   use Operations; -- make all names in Operations package available.
@@ -63,6 +65,9 @@ begin
 
   -- Type conversion
   Conv2;
+
+  -- See subtypes in action, runtime error expected
+  GreetingDays;
 
 end Learn_Ada;
 
